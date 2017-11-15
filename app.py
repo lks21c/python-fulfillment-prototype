@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-#from __future__ import print_function
+from __future__ import print_function
 from future.standard_library import install_aliases
 
 install_aliases()
@@ -64,7 +64,7 @@ def webhook():
 
     res = json.dumps(res, indent=4)
 
-    print "res = ", res
+    print("res = ", res)
 
     r = make_response(res)
     r.headers['Content-Type'] = 'application/json'
