@@ -44,7 +44,6 @@ def webhook():
     res = processRequest(req)
 
     res =     {
-        "speech": "Text response",
     "displayText": "Text response",
     "platform": "google",
     "textToSpeech": "Audio response",
