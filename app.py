@@ -43,14 +43,10 @@ def webhook():
 
     res = processRequest(req)
 
-    res = {
-        "speech": "speech",
-        "displayText": "speech",
-        "source": "KoreanBot"
-    }
-
+    print("res before dump", res)
     res = json.dumps(res, indent=4)
-    print("res", res)
+    print("res after dump", res)
+
     r = make_response(res)
     r.headers['Content-Type'] = 'application/json'
     return r
@@ -74,6 +70,7 @@ def makeYqlQuery(req):
     result = req.get("result")
     parameters = result.get("parameters")
     city = parameters.get("geo-city")
+    print("city = ", city)
     if city is None:
         return None
 
