@@ -46,7 +46,11 @@ def webhook():
     res = json.dumps(res, indent=4)
     print("res = ", res)
 
-    res = "{\"textToSpeech\": \"Howdy! I can tell you fun facts about almost any number, like 42. What do you have in mind?\",\"displayText\": \"Howdy! I can tell you fun facts about almost any number. What do you have in mind?\"}"
+    res = {
+        "textToSpeech": "Howdy! I can tell you fun facts about almost any number, like 42. What do you have in mind?",
+        "displayText": "Howdy! I can tell you fun facts about almost any number. What do you have in mind?"
+    }
+
     print("manipulated res = ", res)
 
     r = make_response(res)
