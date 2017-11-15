@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from __future__ import print_function
+#from __future__ import print_function
 from future.standard_library import install_aliases
 
 install_aliases()
@@ -44,25 +44,27 @@ def webhook():
     res = processRequest(req)
 
     res = {
-                            "basicCard": {
-                                "title": "Math & prime numbers",
-                                "formattedText": "42 is an even composite number. It\n    is composed of three distinct prime numbers multiplied together. It\n    has a total of eight divisors. 42 is an abundant number, because the\n    sum of its proper divisors 54 is greater than itself. To count from\n    1 to 42 would take you about twenty-one…",
-                                "image": {
-                                    "url": "https://example.google.com/42.png",
-                                    "accessibilityText": "Image alternate text"
-                                },
-                                "buttons": [
-                                    {
-                                        "title": "Read more",
-                                        "openUrlAction": {
-                                            "url": "https://example.google.com/mathandprimes"
-                                        }
-                                    }
-                                ]
-                            }
-                        }
+        "basicCard": {
+            "title": "Math & prime numbers",
+            "formattedText": "42 is an even composite number. It\n    is composed of three distinct prime numbers multiplied together. It\n    has a total of eight divisors. 42 is an abundant number, because the\n    sum of its proper divisors 54 is greater than itself. To count from\n    1 to 42 would take you about twenty-one…",
+            "image": {
+                "url": "https://example.google.com/42.png",
+                "accessibilityText": "Image alternate text"
+            },
+            "buttons": [
+                {
+                    "title": "Read more",
+                    "openUrlAction": {
+                        "url": "https://example.google.com/mathandprimes"
+                    }
+                }
+            ]
+        }
+    }
 
     res = json.dumps(res, indent=4)
+
+    print "res = ", res
 
     r = make_response(res)
     r.headers['Content-Type'] = 'application/json'
