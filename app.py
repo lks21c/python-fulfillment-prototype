@@ -43,6 +43,13 @@ def webhook():
 
     res = processRequest(req)
 
+    res =   {
+    "displayText": "Text response",
+    "platform": "google",
+    "textToSpeech": "Audio response",
+    "type": "simple_response"
+  }
+
     res = json.dumps(res, indent=4)
 
     print("res = ", res)
