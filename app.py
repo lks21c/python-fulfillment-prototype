@@ -43,13 +43,6 @@ def webhook():
 
     res = processRequest(req)
 
-    res =  {
-                            "simpleResponse": {
-                                "speech": "Howdy! I can tell you fun facts about almost any number, like 42. What do you have in mind?",
-                                "displayText": "Howdy! I can tell you fun facts about almost any number. What do you have in mind?"
-                            }
-                        }
-
     res = json.dumps(res, indent=4)
 
     print("res = ", res)
