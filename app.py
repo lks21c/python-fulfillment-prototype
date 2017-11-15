@@ -43,11 +43,23 @@ def webhook():
 
     res = processRequest(req)
 
-    res =   {
-    "displayText": "Text response",
+    res =     {
+    "buttons": [
+      {
+        "openUrlAction": {
+          "url": "https://linkUrl.com"
+        },
+        "title": "AoG Card Link title"
+      }
+    ],
+    "formattedText": "AoG Card Description",
+    "image": {
+      "url": "http://imageUrl.com"
+    },
     "platform": "google",
-    "textToSpeech": "Audio response",
-    "type": "simple_response"
+    "subtitle": "AoG Card Subtitle",
+    "title": "AoG Card Title",
+    "type": "basic_card"
   }
 
     res = json.dumps(res, indent=4)
