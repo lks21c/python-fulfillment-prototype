@@ -16,6 +16,7 @@
 
 from __future__ import print_function
 from future.standard_library import install_aliases
+
 install_aliases()
 
 from urllib.parse import urlparse, urlencode
@@ -43,7 +44,7 @@ def webhook():
     res = processRequest(req)
 
     res = json.dumps(res, indent=4)
-    # print(res)
+    print("res", res)
     r = make_response(res)
     r.headers['Content-Type'] = 'application/json'
     return r
