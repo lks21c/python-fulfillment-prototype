@@ -44,9 +44,17 @@ def webhook():
     res = processRequest(req)
 
     res = {
+        "buttons": [
+            {
+                "postback": "http://www.melon.com",
+                "text": "Card Link Title"
+            }
+        ],
+        "imageUrl": "http://cdnimg.melon.co.kr/cm/album/images/101/11/780/10111780_500.jpg/melon/resize/216/quality/80/optimize",
         "platform": "slack",
-        "speech": "Text response",
-        "type": 0
+        "subtitle": "Card Subtitle",
+        "title": "Card Title",
+        "type": 1
     }
 
     res = json.dumps(res, indent=4)
