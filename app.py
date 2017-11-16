@@ -46,7 +46,7 @@ def webhook():
     res = {
         "buttons": [
             {
-                "postback": "http://www.melon.com",
+                "postback": "Card Link URL or text",
                 "text": "Card Link Title"
             }
         ],
