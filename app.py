@@ -43,13 +43,11 @@ def webhook():
 
     res = processRequest(req)
 
-    res = {"items": [{"simpleResponse": {"textToSpeech": "이런 노래 어떨까요?"}}, {
-        "basicCard": {"title": "제목위치", "formattedText": "카드의 내용이 나오는 자리.",
-                      "image": {"url": "http://cdnimg.melon.co.kr/cm/album/images/022/56/290/2256290_500.jpg",
-                                "accessibilityText": "이미지가 제대로 뜨지 않습니다."},
-                      "buttons": [{"title": "Read more", "openUrlAction": {"url": "www.melon.com"}}]}}],
-           "suggestions": []
-           }
+    res = {
+        "platform": "slack",
+        "speech": "Text response",
+        "type": 0
+    }
 
     res = json.dumps(res, indent=4)
 
